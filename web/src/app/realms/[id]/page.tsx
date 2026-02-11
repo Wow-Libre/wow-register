@@ -22,13 +22,15 @@ export default async function RealmDetailPage({
 
   return (
     <>
-      <p style={{ marginBottom: '1rem' }}>
-        <Link href="/realms">← Reinos</Link>
+      <p className="mb-4">
+        <Link href="/realms" className="text-wow-gold hover:text-wow-gold-dim">← Reinos</Link>
       </p>
-      <h1>{realm.name}</h1>
-      <div className="card" style={{ marginTop: '1rem', maxWidth: '400px' }}>
-        <p><strong>Nombre</strong> {realm.name}</p>
-        <p><strong>Dirección</strong> <code>{realm.address}</code></p>
+      <h1 className="font-display mb-6 text-2xl font-bold text-slate-100">{realm.name}</h1>
+      <div className="card-wow max-w-md">
+        <ul className="space-y-2 text-slate-300">
+          <li><strong className="text-slate-200">Nombre</strong> {realm.name}</li>
+          <li><strong className="text-slate-200">Dirección</strong> <code className="rounded bg-wow-dark px-1.5 py-0.5 text-slate-400">{realm.address}</code></li>
+        </ul>
       </div>
     </>
   )

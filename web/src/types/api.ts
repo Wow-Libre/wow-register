@@ -65,3 +65,15 @@ export interface PageResponse<T> {
   first: boolean
   last: boolean
 }
+
+export interface RegisterRequest {
+  username: string
+  password: string
+  email?: string
+}
+
+export interface RegisterResponse {
+  success: boolean
+  message: string
+  username: string
+}

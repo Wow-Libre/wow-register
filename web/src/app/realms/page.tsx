@@ -13,33 +13,41 @@ export default async function RealmsPage() {
 
   return (
     <>
-      <h1>Reinos</h1>
-      <p style={{ color: 'var(--text-muted)', marginBottom: '1.5rem' }}>
+      <h1 className="font-display mb-1 text-2xl font-bold text-slate-100">Reinos</h1>
+      <p className="mb-6 text-slate-400">
         Reinos configurados en el emulador (un reino en esta instalación).
       </p>
 
       {realms.length === 0 ? (
-        <div className="card">
-          <p style={{ margin: 0, color: 'var(--text-muted)' }}>
-            No hay reinos o no se pudo cargar la lista.
-          </p>
+        <div className="card-wow">
+          <p className="m-0 text-slate-400">No hay reinos o no se pudo cargar la lista.</p>
         </div>
       ) : (
-        <div className="tableWrap">
-          <table className="table">
+        <div className="overflow-hidden rounded-xl border border-wow-border shadow-wow-card">
+          <table className="w-full border-collapse bg-wow-card">
             <thead>
               <tr>
-                <th>Nombre</th>
-                <th>Dirección</th>
-                <th></th>
+                <th className="border-b border-wow-border bg-wow-dark/80 px-4 py-3 text-left font-display text-xs uppercase tracking-wider text-wow-gold">
+                  Nombre
+                </th>
+                <th className="border-b border-wow-border bg-wow-dark/80 px-4 py-3 text-left font-display text-xs uppercase tracking-wider text-wow-gold">
+                  Dirección
+                </th>
+                <th className="border-b border-wow-border bg-wow-dark/80 px-4 py-3 text-right font-display text-xs uppercase tracking-wider text-wow-gold">
+                  Acción
+                </th>
               </tr>
             </thead>
             <tbody>
               {realms.map((r) => (
-                <tr key={r.id}>
-                  <td><strong>{r.name}</strong></td>
-                  <td><code style={{ fontSize: '0.9rem' }}>{r.address}</code></td>
-                  <td><Link href={`/realms/${r.id}`}>Ver</Link></td>
+                <tr key={r.id} className="border-b border-wow-border transition-colors hover:bg-wow-card-hover last:border-0">
+                  <td className="px-4 py-3 font-medium text-slate-200">{r.name}</td>
+                  <td className="px-4 py-3">
+                    <code className="rounded bg-wow-dark px-1.5 py-0.5 text-sm text-slate-400">{r.address}</code>
+                  </td>
+                  <td className="px-4 py-3 text-right">
+                    <Link href={`/realms/${r.id}`} className="text-wow-gold hover:text-wow-gold-dim">Ver</Link>
+                  </td>
                 </tr>
               ))}
             </tbody>

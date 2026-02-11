@@ -26,29 +26,28 @@ export default async function GuildDetailPage({
 
   return (
     <>
-      <p style={{ marginBottom: '1rem' }}>
-        <Link href="/guilds">← Hermandades</Link>
+      <p className="mb-4">
+        <Link href="/guilds" className="text-wow-gold hover:text-wow-gold-dim">← Hermandades</Link>
       </p>
-      <h1>{guild.name}</h1>
-      <p style={{ color: 'var(--text-muted)' }}>
-        Líder: <strong>{guild.leaderName}</strong> · {guild.memberCount} miembros
+      <h1 className="font-display mb-1 text-2xl font-bold text-slate-100">{guild.name}</h1>
+      <p className="mb-6 text-slate-400">
+        Líder: <strong className="text-slate-300">{guild.leaderName}</strong> · {guild.memberCount} miembros
       </p>
-
-      <div className="cardGrid" style={{ marginTop: '1rem' }}>
-        <div className="card">
-          <h3 style={{ marginTop: 0, color: 'var(--gold)' }}>Información</h3>
-          <p><strong>Mensaje del día</strong></p>
-          <p style={{ marginTop: '0.25rem' }}>{guild.motd || '—'}</p>
-          <p><strong>Descripción</strong></p>
-          <p style={{ marginTop: '0.25rem' }}>{guild.info || '—'}</p>
-          <p><strong>Fecha de creación</strong> {created}</p>
-          <p><strong>Acceso</strong> {guild.publicAccess ? 'Público' : 'Privado'}</p>
+      <div className="grid gap-5 sm:grid-cols-2">
+        <div className="card-wow">
+          <h3 className="font-display mb-3 text-lg text-wow-gold">Información</h3>
+          <p className="mb-1 text-slate-400"><strong className="text-slate-300">Mensaje del día</strong></p>
+          <p className="mb-4 text-slate-300">{guild.motd || '—'}</p>
+          <p className="mb-1 text-slate-400"><strong className="text-slate-300">Descripción</strong></p>
+          <p className="mb-4 text-slate-300">{guild.info || '—'}</p>
+          <p className="text-slate-300"><strong className="text-slate-200">Fecha de creación</strong> {created}</p>
+          <p className="text-slate-300"><strong className="text-slate-200">Acceso</strong> {guild.publicAccess ? 'Público' : 'Privado'}</p>
         </div>
-        <div className="card">
-          <h3 style={{ marginTop: 0, color: 'var(--gold)' }}>Recursos</h3>
-          <p><strong>Banco</strong> {guild.bankMoneyFormatted || '—'}</p>
+        <div className="card-wow">
+          <h3 className="font-display mb-3 text-lg text-wow-gold">Recursos</h3>
+          <p className="text-slate-300"><strong className="text-slate-200">Banco</strong> {guild.bankMoneyFormatted || '—'}</p>
           {guild.discord && (
-            <p><strong>Discord</strong> {guild.discord}</p>
+            <p className="mt-2 text-slate-300"><strong className="text-slate-200">Discord</strong> {guild.discord}</p>
           )}
         </div>
       </div>

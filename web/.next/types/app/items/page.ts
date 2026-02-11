@@ -1,4 +1,4 @@
-// File: C:\Users\usuario\Documents\worskpace\wowr-register\web\src\app\items\page.tsx
+// File: /Users/machitiva/Documents/wow-register/web/src/app/items/page.tsx
 import * as entry from '../../../../src/app/items/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

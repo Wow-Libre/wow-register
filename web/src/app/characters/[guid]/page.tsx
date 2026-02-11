@@ -22,31 +22,35 @@ export default async function CharacterDetailPage({
 
   return (
     <>
-      <p style={{ marginBottom: '1rem' }}>
-        <Link href="/characters">← Personajes</Link>
+      <p className="mb-4">
+        <Link href="/characters" className="text-wow-gold hover:text-wow-gold-dim">← Personajes</Link>
       </p>
-      <h1>{character.name}</h1>
-      <div className="cardGrid" style={{ marginTop: '1rem' }}>
-        <div className="card">
-          <h3 style={{ marginTop: 0, color: 'var(--gold)' }}>General</h3>
-          <p><strong>Nivel</strong> {character.level}</p>
-          <p><strong>Clase</strong> {character.classId}</p>
-          <p><strong>Raza</strong> {character.race}</p>
-          <p><strong>Género</strong> {character.gender}</p>
-          <p><strong>XP</strong> {character.xp}</p>
-          <p><strong>Oro</strong> {character.gold?.toLocaleString() ?? 0}</p>
-          <p>
-            <strong>Estado</strong>{' '}
-            <span className={`badge ${character.online === 1 ? 'badgeOnline' : 'badgeOffline'}`}>
-              {character.online === 1 ? 'En línea' : 'Desconectado'}
-            </span>
-          </p>
+      <h1 className="font-display mb-2 text-2xl font-bold text-slate-100">{character.name}</h1>
+      <div className="grid gap-5 sm:grid-cols-2">
+        <div className="card-wow">
+          <h3 className="font-display mb-3 text-lg text-wow-gold">General</h3>
+          <ul className="space-y-2 text-slate-300">
+            <li><strong className="text-slate-200">Nivel</strong> {character.level}</li>
+            <li><strong className="text-slate-200">Clase</strong> {character.classId}</li>
+            <li><strong className="text-slate-200">Raza</strong> {character.race}</li>
+            <li><strong className="text-slate-200">Género</strong> {character.gender}</li>
+            <li><strong className="text-slate-200">XP</strong> {character.xp}</li>
+            <li><strong className="text-slate-200">Oro</strong> {character.gold?.toLocaleString() ?? 0}</li>
+            <li>
+              <strong className="text-slate-200">Estado</strong>{' '}
+              <span className={character.online === 1 ? 'badge-online' : 'badge-offline'}>
+                {character.online === 1 ? 'En línea' : 'Desconectado'}
+              </span>
+            </li>
+          </ul>
         </div>
-        <div className="card">
-          <h3 style={{ marginTop: 0, color: 'var(--gold)' }}>Combate / Mundo</h3>
-          <p><strong>Total kills</strong> {character.totalKills ?? 0}</p>
-          <p><strong>Zona</strong> {character.zone ?? '—'}</p>
-          <p><strong>Mapa</strong> {character.map ?? '—'}</p>
+        <div className="card-wow">
+          <h3 className="font-display mb-3 text-lg text-wow-gold">Combate / Mundo</h3>
+          <ul className="space-y-2 text-slate-300">
+            <li><strong className="text-slate-200">Total kills</strong> {character.totalKills ?? 0}</li>
+            <li><strong className="text-slate-200">Zona</strong> {character.zone ?? '—'}</li>
+            <li><strong className="text-slate-200">Mapa</strong> {character.map ?? '—'}</li>
+          </ul>
         </div>
       </div>
     </>

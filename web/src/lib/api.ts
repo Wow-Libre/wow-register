@@ -6,6 +6,8 @@ import type {
   ServerStats,
   SoapCommandResult,
   PageResponse,
+  RegisterRequest,
+  RegisterResponse,
 } from '@/types/api'
 
 const BASE = '/api'
@@ -18,6 +20,22 @@ async function get<T>(path: string, params?: Record<string, string | number>): P
   const res = await fetch(url.toString(), { credentials: 'include', cache: 'no-store' })
   if (!res.ok) throw new Error(await res.text().catch(() => res.statusText))
   return res.json() as Promise<T>
+}
+
+async function post<T>(path: string, body: object): Promise<T> {
+  const url = new URL(path, typeof window !== 'undefined' ? window.location.origin : 'http://localhost:3000')
+  const res = await fetch(url.toString(), {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(body),
+    credentials: 'include',
+  })
+  const data = await res.json().catch(() => ({}))
+  if (!res.ok) {
+    const msg = (data as { message?: string }).message ?? res.statusText
+    throw new Error(msg)
+  }
+  return data as T
 }
 
 export const api = {
@@ -57,4 +75,6 @@ export const api = {
     stats: () => get<ServerStats>(`${BASE}/server/stats`),
     info: () => get<SoapCommandResult>(`${BASE}/server/info`),
   },
+  register: (body: RegisterRequest) =>
+    post<RegisterResponse>(`${BASE}/register`, body),
 }
