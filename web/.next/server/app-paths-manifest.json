@@ -1,0 +1,8 @@
+{
+  "/page": "app/page.js",
+  "/realms/page": "app/realms/page.js",
+  "/characters/page": "app/characters/page.js",
+  "/items/page": "app/items/page.js",
+  "/guilds/page": "app/guilds/page.js",
+  "/server/page": "app/server/page.js"
+}

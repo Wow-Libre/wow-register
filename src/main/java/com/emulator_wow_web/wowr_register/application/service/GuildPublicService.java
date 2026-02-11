@@ -58,8 +58,6 @@ public class GuildPublicService {
                 .createDate(g.getCreateDate())
                 .bankMoneyFormatted(formatMoney(g.getBankMoney() != null ? g.getBankMoney() : 0))
                 .memberCount((int) members)
-                .publicAccess(g.getPublicAccess())
-                .discord(g.getDiscord())
                 .build();
     }
 

@@ -22,6 +22,4 @@ public class GuildPublicDto {
     private Long createDate;
     private String bankMoneyFormatted;
     private int memberCount;
-    private Boolean publicAccess;
-    private String discord;
 }
