@@ -1,6 +1,6 @@
 package com.emulator_wow_web.wowr_register.infrastructure.entities.characters;
 
-import com.auth.wow.libre.infrastructure.entities.characters.dto.*;
+import com.emulator_wow_web.wowr_register.infrastructure.entities.characters.dto.*;
 import jakarta.persistence.*;
 import lombok.*;
 

@@ -1,0 +1,20 @@
+package com.emulator_wow_web.wowr_register.infrastructure.client.soap;
+
+import jakarta.xml.bind.annotation.*;
+
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "", propOrder = {"executeCommand"})
+@XmlRootElement(name = "Body", namespace = "urn:TC")
+public class Body {
+
+    @XmlElement(name = "executeCommand", namespace = "urn:TC", required = true)
+    protected ExecuteCommand executeCommand;
+
+    public ExecuteCommand getExecuteCommand() {
+        return executeCommand;
+    }
+
+    public void setExecuteCommand(ExecuteCommand value) {
+        this.executeCommand = value;
+    }
+}
