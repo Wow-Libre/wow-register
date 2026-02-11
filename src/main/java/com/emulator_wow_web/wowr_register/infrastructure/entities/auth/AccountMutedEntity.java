@@ -12,8 +12,8 @@ import java.io.*;
 @Table(name = "account_muted")
 public class AccountMutedEntity implements Serializable {
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long guid;
+  @Id
   @Column(name = "mutedate")
   private Long mutedate;
   @Column(name = "mutetime")

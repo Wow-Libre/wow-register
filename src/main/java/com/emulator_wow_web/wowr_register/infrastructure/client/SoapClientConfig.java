@@ -1,5 +1,9 @@
 package com.emulator_wow_web.wowr_register.infrastructure.client;
 
+import com.emulator_wow_web.wowr_register.infrastructure.client.soap.Body;
+import com.emulator_wow_web.wowr_register.infrastructure.client.soap.Envelope;
+import com.emulator_wow_web.wowr_register.infrastructure.client.soap.ExecuteCommand;
+import com.emulator_wow_web.wowr_register.infrastructure.client.soap.resp.ExecuteCommandResponse;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -22,14 +26,14 @@ public class SoapClientConfig {
     @Bean
     public Jaxb2Marshaller soapRequestMarshaller() {
         Jaxb2Marshaller m = new Jaxb2Marshaller();
-        m.setContextPath("com.emulator_wow_web.wowr_register.infrastructure.client.soap");
+        m.setClassesToBeBound(ExecuteCommand.class, Body.class, Envelope.class);
         return m;
     }
 
     @Bean
     public Jaxb2Marshaller soapResponseUnmarshaller() {
         Jaxb2Marshaller m = new Jaxb2Marshaller();
-        m.setContextPath("com.emulator_wow_web.wowr_register.infrastructure.client.soap.resp");
+        m.setClassesToBeBound(ExecuteCommandResponse.class);
         return m;
     }
 
