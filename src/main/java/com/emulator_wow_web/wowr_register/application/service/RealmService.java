@@ -2,7 +2,7 @@ package com.emulator_wow_web.wowr_register.application.service;
 
 import com.emulator_wow_web.wowr_register.application.dto.RealmPublicDto;
 import com.emulator_wow_web.wowr_register.infrastructure.entities.auth.RealmlistEntity;
-import com.emulator_wow_web.wowr_register.infrastructure.persistence.RealmlistRepository;
+import com.emulator_wow_web.wowr_register.infrastructure.persistence.auth.RealmlistRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

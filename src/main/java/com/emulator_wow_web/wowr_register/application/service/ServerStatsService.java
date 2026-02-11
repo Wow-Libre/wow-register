@@ -1,10 +1,10 @@
 package com.emulator_wow_web.wowr_register.application.service;
 
 import com.emulator_wow_web.wowr_register.application.dto.ServerStatsDto;
-import com.emulator_wow_web.wowr_register.infrastructure.persistence.AccountRepository;
-import com.emulator_wow_web.wowr_register.infrastructure.persistence.CharactersRepository;
-import com.emulator_wow_web.wowr_register.infrastructure.persistence.GuildRepository;
-import com.emulator_wow_web.wowr_register.infrastructure.persistence.ItemTemplateRepository;
+import com.emulator_wow_web.wowr_register.infrastructure.persistence.auth.AccountRepository;
+import com.emulator_wow_web.wowr_register.infrastructure.persistence.characters.CharactersRepository;
+import com.emulator_wow_web.wowr_register.infrastructure.persistence.characters.GuildRepository;
+import com.emulator_wow_web.wowr_register.infrastructure.persistence.world.ItemTemplateRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

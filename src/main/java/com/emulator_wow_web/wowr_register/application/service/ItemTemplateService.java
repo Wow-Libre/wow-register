@@ -2,7 +2,7 @@ package com.emulator_wow_web.wowr_register.application.service;
 
 import com.emulator_wow_web.wowr_register.application.dto.ItemTemplatePublicDto;
 import com.emulator_wow_web.wowr_register.infrastructure.entities.world.ItemTemplateEntity;
-import com.emulator_wow_web.wowr_register.infrastructure.persistence.ItemTemplateRepository;
+import com.emulator_wow_web.wowr_register.infrastructure.persistence.world.ItemTemplateRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

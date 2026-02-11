@@ -2,7 +2,7 @@ package com.emulator_wow_web.wowr_register.application.service;
 
 import com.emulator_wow_web.wowr_register.application.dto.CharacterPublicDto;
 import com.emulator_wow_web.wowr_register.infrastructure.entities.characters.CharactersEntity;
-import com.emulator_wow_web.wowr_register.infrastructure.persistence.CharactersRepository;
+import com.emulator_wow_web.wowr_register.infrastructure.persistence.characters.CharactersRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
