@@ -18,15 +18,15 @@ export default async function ServerPage() {
 
   return (
     <>
-      <h1 className="font-display mb-1 text-2xl font-bold text-slate-100">Servidor</h1>
+      <h1 className="font-display mb-1 text-2xl font-bold text-slate-100">Estado del servidor</h1>
       <p className="mb-6 text-slate-400">
-        Estadísticas del reino e información del emulador (vía SOAP).
+        Estadísticas en vivo del servidor privado.
       </p>
 
       {stats && (
         <div className="card-wow mb-6">
           <h2 className="font-display mb-4 text-lg text-wow-gold">Estadísticas</h2>
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
             <div className="rounded-lg border border-wow-border bg-wow-dark/50 p-4">
               <div className="font-display text-xl text-wow-gold">{stats.totalAccounts.toLocaleString()}</div>
               <div className="text-sm text-slate-500">Cuentas</div>
@@ -37,15 +37,11 @@ export default async function ServerPage() {
             </div>
             <div className="rounded-lg border border-wow-border bg-wow-dark/50 p-4">
               <div className="font-display text-xl text-wow-gold">{stats.onlineCharacters}</div>
-              <div className="text-sm text-slate-500">Conectados</div>
+              <div className="text-sm text-slate-500">Jugadores en línea</div>
             </div>
             <div className="rounded-lg border border-wow-border bg-wow-dark/50 p-4">
               <div className="font-display text-xl text-wow-gold">{stats.totalGuilds}</div>
               <div className="text-sm text-slate-500">Hermandades</div>
-            </div>
-            <div className="rounded-lg border border-wow-border bg-wow-dark/50 p-4">
-              <div className="font-display text-xl text-wow-gold">{stats.totalItems.toLocaleString()}</div>
-              <div className="text-sm text-slate-500">Objetos</div>
             </div>
           </div>
         </div>
@@ -54,7 +50,7 @@ export default async function ServerPage() {
       {info && (
         <div className="card-wow">
           <h2 className="font-display mb-4 text-lg text-wow-gold">
-            Información del emulador (SOAP)
+            Información del servidor
           </h2>
           <p className="mb-2 flex items-center gap-2 text-sm">
             <strong className="text-slate-300">Comando:</strong>
@@ -73,7 +69,7 @@ export default async function ServerPage() {
 
       {!stats && !info && (
         <div className="card-wow">
-          <p className="m-0 text-slate-400">No se pudo conectar con la API del backend.</p>
+          <p className="m-0 text-slate-400">No se pudo conectar con el servidor. Intenta más tarde.</p>
         </div>
       )}
     </>

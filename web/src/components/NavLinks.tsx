@@ -5,12 +5,11 @@ import { usePathname } from 'next/navigation'
 
 const nav = [
   { href: '/', label: 'Inicio' },
-  { href: '/realms', label: 'Reinos' },
+  { href: '/realms', label: 'Conectar' },
   { href: '/characters', label: 'Personajes' },
   { href: '/guilds', label: 'Hermandades' },
-  { href: '/items', label: 'Objetos' },
-  { href: '/server', label: 'Servidor' },
-  { href: '/register', label: 'Registro', cta: true },
+  { href: '/server', label: 'Estado' },
+  { href: '/register', label: 'Jugar ahora', cta: true },
 ]
 
 export function NavLinks() {

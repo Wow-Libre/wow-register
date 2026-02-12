@@ -11,25 +11,40 @@
       "static/chunks/main-app.js",
       "static/chunks/app/page.js"
     ],
-    "/realms/page": [
+    "/register/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/realms/page.js"
+      "static/chunks/app/register/page.js"
     ],
     "/characters/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/characters/page.js"
     ],
+    "/realms/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/realms/page.js"
+    ],
+    "/realms/[id]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/realms/[id]/page.js"
+    ],
+    "/characters/[guid]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/characters/[guid]/page.js"
+    ],
     "/guilds/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/guilds/page.js"
     ],
-    "/items/page": [
+    "/guilds/[id]/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/items/page.js"
+      "static/chunks/app/guilds/[id]/page.js"
     ],
     "/server/page": [
       "static/chunks/webpack.js",

@@ -27,7 +27,7 @@ export default async function GuildDetailPage({
   return (
     <>
       <p className="mb-4">
-        <Link href="/guilds" className="text-wow-gold hover:text-wow-gold-dim">← Hermandades</Link>
+        <Link href="/guilds" className="text-wow-gold hover:text-wow-gold-dim">← Hermandades del servidor</Link>
       </p>
       <h1 className="font-display mb-1 text-2xl font-bold text-slate-100">{guild.name}</h1>
       <p className="mb-6 text-slate-400">

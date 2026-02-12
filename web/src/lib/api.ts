@@ -2,7 +2,6 @@ import type {
   RealmPublic,
   CharacterPublic,
   GuildPublic,
-  ItemTemplatePublic,
   ServerStats,
   SoapCommandResult,
   PageResponse,
@@ -62,14 +61,6 @@ export const api = {
       ),
     count: () => get<number>(`${BASE}/guilds/count`),
     byId: (id: number) => get<GuildPublic>(`${BASE}/guilds/${id}`),
-  },
-  items: {
-    list: (page = 0, size = 20, name?: string) =>
-      get<PageResponse<ItemTemplatePublic>>(
-        `${BASE}/items`,
-        { page: String(page), size: String(size), ...(name ? { name } : {}) }
-      ),
-    byEntry: (entry: number) => get<ItemTemplatePublic>(`${BASE}/items/${entry}`),
   },
   server: {
     stats: () => get<ServerStats>(`${BASE}/server/stats`),

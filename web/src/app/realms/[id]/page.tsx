@@ -23,7 +23,7 @@ export default async function RealmDetailPage({
   return (
     <>
       <p className="mb-4">
-        <Link href="/realms" className="text-wow-gold hover:text-wow-gold-dim">← Reinos</Link>
+        <Link href="/realms" className="text-wow-gold hover:text-wow-gold-dim">← Conectar al servidor</Link>
       </p>
       <h1 className="font-display mb-6 text-2xl font-bold text-slate-100">{realm.name}</h1>
       <div className="card-wow max-w-md">

@@ -38,24 +38,21 @@ export default function RegisterPage() {
   }
 
   return (
-    <>
-      <section className="relative overflow-hidden rounded-2xl border border-wow-border bg-wow-card/80 px-6 py-12 text-center sm:py-14">
-        <div className="absolute inset-0 bg-hero-glow opacity-60" />
-        <div className="relative">
-          <h1 className="font-display mb-2 text-2xl font-bold text-wow-gold sm:text-3xl">
-            Crear cuenta de juego
+    <div className="mx-auto max-w-md">
+      <div className="rounded-2xl border border-wow-border bg-wow-card/90 shadow-soft overflow-hidden">
+        <div className="border-b border-wow-border bg-wow-dark/50 px-6 py-6 text-center">
+          <h1 className="font-display text-2xl font-bold tracking-wide text-white sm:text-3xl">
+            Crear cuenta para el servidor
           </h1>
-          <p className="mx-auto max-w-lg text-slate-400">
-            La cuenta se crea en el emulador mediante SOAP (comando <code className="rounded bg-wow-dark px-1 text-wow-gold">account create</code>). Luego podrás iniciar sesión en el cliente del juego.
+          <p className="mt-2 text-sm text-slate-400">
+            Regístrate para jugar en nuestro servidor privado. Gratis.
           </p>
         </div>
-      </section>
 
-      <div className="card-wow mx-auto max-w-md p-8">
-        <form onSubmit={handleSubmit} className="space-y-5">
+        <form onSubmit={handleSubmit} className="p-6 sm:p-8 space-y-5">
           <div>
-            <label htmlFor="username" className="mb-1.5 block text-sm text-slate-400">
-              Usuario *
+            <label htmlFor="username" className="mb-2 block text-sm font-medium text-slate-300">
+              Usuario
             </label>
             <input
               id="username"
@@ -71,8 +68,8 @@ export default function RegisterPage() {
             />
           </div>
           <div>
-            <label htmlFor="password" className="mb-1.5 block text-sm text-slate-400">
-              Contraseña *
+            <label htmlFor="password" className="mb-2 block text-sm font-medium text-slate-300">
+              Contraseña
             </label>
             <input
               id="password"
@@ -88,8 +85,8 @@ export default function RegisterPage() {
             />
           </div>
           <div>
-            <label htmlFor="email" className="mb-1.5 block text-sm text-slate-400">
-              Email (opcional)
+            <label htmlFor="email" className="mb-2 block text-sm font-medium text-slate-300">
+              Email <span className="text-slate-500 font-normal">(opcional)</span>
             </label>
             <input
               id="email"
@@ -104,10 +101,10 @@ export default function RegisterPage() {
 
           {result && (
             <div
-              className={`rounded-lg border px-4 py-3 text-sm ${
+              className={`rounded-xl border px-4 py-3 text-sm ${
                 result.success
-                  ? 'border-emerald-500/50 bg-emerald-500/10 text-emerald-300'
-                  : 'border-red-500/50 bg-red-500/10 text-red-200'
+                  ? 'border-emerald-500/40 bg-emerald-500/10 text-emerald-200'
+                  : 'border-red-500/40 bg-red-500/10 text-red-200'
               }`}
             >
               {result.message}
@@ -116,19 +113,22 @@ export default function RegisterPage() {
 
           <button
             type="submit"
-            className="btn-primary w-full py-3"
+            className="w-full rounded-lg bg-gradient-to-b from-wow-gold to-wow-gold-dim py-3.5 font-semibold text-wow-dark shadow-[0_4px_16px_rgba(212,175,55,0.35)] transition-all hover:brightness-110 disabled:opacity-60 disabled:cursor-not-allowed"
             disabled={loading}
           >
-            {loading ? 'Creando cuenta…' : 'Registrarme'}
+            {loading ? 'Creando cuenta…' : 'Registrarme y jugar'}
           </button>
         </form>
 
-        <p className="mt-6 text-center text-sm text-slate-500">
-          <Link href="/" className="text-wow-gold hover:text-wow-gold-dim">
+        <div className="border-t border-wow-border px-6 py-4 text-center">
+          <Link
+            href="/"
+            className="text-sm text-slate-400 transition-colors hover:text-wow-gold"
+          >
             ← Volver al inicio
           </Link>
-        </p>
+        </div>
       </div>
-    </>
+    </div>
   )
 }

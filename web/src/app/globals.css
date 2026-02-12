@@ -18,6 +18,14 @@
     font-family: var(--font-crimson), 'Crimson Text', Georgia, serif;
     background-image: radial-gradient(ellipse 120% 80% at 50% -30%, rgba(255, 255, 255, 0.03), transparent 60%);
   }
+  body.cursor-landing {
+    cursor: none;
+  }
+  @media (pointer: coarse) {
+    body.cursor-landing {
+      cursor: auto;
+    }
+  }
   a {
     @apply text-wow-gold transition-colors hover:text-wow-gold-dim;
   }

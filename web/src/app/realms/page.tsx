@@ -13,14 +13,14 @@ export default async function RealmsPage() {
 
   return (
     <>
-      <h1 className="font-display mb-1 text-2xl font-bold text-slate-100">Reinos</h1>
+      <h1 className="font-display mb-1 text-2xl font-bold text-slate-100">Conectar al servidor</h1>
       <p className="mb-6 text-slate-400">
-        Reinos configurados en el emulador (un reino en esta instalación).
+        Dirección para conectar tu cliente de WoW al servidor privado.
       </p>
 
       {realms.length === 0 ? (
         <div className="card-wow">
-          <p className="m-0 text-slate-400">No hay reinos o no se pudo cargar la lista.</p>
+          <p className="m-0 text-slate-400">No hay reinos disponibles o no se pudo cargar la lista.</p>
         </div>
       ) : (
         <div className="overflow-hidden rounded-xl border border-wow-border shadow-wow-card">
