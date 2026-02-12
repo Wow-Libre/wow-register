@@ -38,18 +38,9 @@ public class RegisterService {
         try {
             String result = emulatorSoapClient.executeCommand(command);
             log.info("Registro SOAP para usuario {}: {}", username, result != null ? "OK" : "sin respuesta");
-
-            if (accountRepository.findByUsername(username).isPresent()) {
-                return RegisterResponseDto.builder()
-                        .success(true)
-                        .message("Cuenta creada correctamente. Ya puedes iniciar sesión en el juego.")
-                        .username(username)
-                        .build();
-            }
-
             return RegisterResponseDto.builder()
-                    .success(false)
-                    .message("El emulador respondió pero la cuenta no apareció. Intenta de nuevo o contacta al administrador.")
+                    .success(true)
+                    .message("Cuenta creada correctamente. Ya puedes iniciar sesión en el juego.")
                     .username(username)
                     .build();
         } catch (Exception e) {

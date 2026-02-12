@@ -42,8 +42,6 @@ public class AccountEntity implements Serializable {
     @Column(name = "muteby")
     private String muteBy;
     private String os;
-    @Column(name = "user_id")
-    private Long userId;
 
     @PrePersist
     public void prePersist() {

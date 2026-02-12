@@ -29,9 +29,4 @@ public class GuildEntity {
     private Long createDate;
     @Column(name = "bankmoney")
     private Long bankMoney;
-    @Column(name = "public_access")
-    private Boolean publicAccess;
-    private String discord;
-    @Column(name = "multi_faction")
-    private Boolean multiFaction;
 }
