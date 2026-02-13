@@ -1,5 +1,12 @@
 # WoW Register — Guía para ejecutar la aplicación
 
+
+
+https://github.com/user-attachments/assets/d6a45690-bd97-4ca1-9490-dd57b078aeb2
+
+
+
+
 Esta guía explica **paso a paso** cómo poner en marcha el **backend** (servidor Java) y la **web** (interfaz en el navegador) para personas con poca experiencia técnica.
 
 ---
